@@ -83,5 +83,21 @@ namespace TDDBank.Tests
                 Assert.AreEqual(5_000_000m, konto.Kontostand); // Fake sagt: 5_000_000
             }
         }
+
+        [TestMethod]
+        public void Bankkonto_Wohlstand()
+        {
+            using (ShimsContext.Create())
+            {
+                var konto = new Fakes.StubBankkonto();
+                Fakes.ShimBankkonto.AllInstances.KontostandGet = x => 0;
+
+                Assert.AreEqual(Reichtum.Nichts, konto.Wohlstand);
+
+                Fakes.ShimBankkonto.AllInstances.KontostandGet = x => 5000;
+                Assert.AreEqual(Reichtum.Reich, konto.Wohlstand);
+            }
+            // Code Coverage: Rechtsklick auf Test -> AnalyzeCodeCoverage
+        }
     }
 }
