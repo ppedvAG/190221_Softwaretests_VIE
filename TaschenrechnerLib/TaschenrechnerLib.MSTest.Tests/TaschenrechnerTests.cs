@@ -51,5 +51,16 @@ namespace TaschenrechnerLib.MSTest.Tests
             Assert.AreEqual(0, erg); // float wäre da bestimmt interessant ( 0.1 + 0.2 )
         }
 
+        // Mehrere Testfälle zusammenfassen
+        [TestMethod]
+        [DataRow(3,5,8)]
+        [DataRow(0,0,0)]
+        [DataRow(123,-20,103)]
+        public void Taschenrechner_Add(int z1, int z2, int expected)
+        {
+            var t = new Taschenrechner();
+            var erg = t.Add(z1, z2);
+            Assert.AreEqual(expected, erg);
+        }
     }
 }
