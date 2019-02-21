@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaschenrechnerLib
 {
-    class Person
+    public class Person
     {
         public string Vorname { get; set; }
         public string Nachname { get; set; }
@@ -15,15 +15,25 @@ namespace TaschenrechnerLib
 
         public override bool Equals(object obj)
         {
-            // Übung:
-            // False wenn:
-            //       Unterschiedliche Datentypen
-            //       Null
-            // True wenn:
-            //       Referenzen gleich
-            //       Datentyp gleich und Werte gleich (easy: Vorname == obj.Vorname)
+            if (obj == null)
+                throw new ArgumentNullException();
+            if (!(obj is Person))
+                return false;
+            if (this == obj)
+                return true;
 
-            throw new NotImplementedException();
+            return GetHashCode() == obj.GetHashCode();
+        }
+
+        public override int GetHashCode()
+        {   // easy-Variante
+            int hashcode = 0;
+            hashcode += Vorname.GetHashCode();
+            hashcode += Nachname.GetHashCode();
+            hashcode += Alter;
+            hashcode += Convert.ToInt32(Kontostand);
+
+            return hashcode;
         }
     }
 }
