@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TDDBank
 {
-    public class Bank
+    public class Bankkonto
     {
     }
 }
