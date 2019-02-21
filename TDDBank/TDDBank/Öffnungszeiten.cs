@@ -37,5 +37,14 @@ namespace TDDBank
                    tage[time.DayOfWeek].OffenAb <= time.TimeOfDay &&
                    tage[time.DayOfWeek].ZuAb > time.TimeOfDay;
         }
+
+        public bool IsNowOpen()
+        {
+            return IsOpen(DateTime.Now);
+            // Lange Variante: Zwischenschicht bauen (Interface) und eigene Stub-Implementierung
+            // Coole Variante: Fakes Framework ( VS Enterprise )
+            //                 TypeMock (Kostenpflichtig)
+            //                 tonerdo/pose (Open Source)
+        }
     }
 }

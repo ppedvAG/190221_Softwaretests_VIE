@@ -28,5 +28,15 @@ namespace TDDBank.Tests
 
             Assert.AreEqual(erwartetesResultat, ö.IsOpen(d));
         }
+
+
+        [TestMethod]
+        public void Öffnungszeiten_IsNowOpen()
+        {
+            var ö = new Öffnungszeiten();
+
+            Assert.IsTrue(ö.IsNowOpen());
+            // Problem: Unittest geht jetzt (15:23), aber am Abend oder am WE nicht mehr
+        }
     }
 }
