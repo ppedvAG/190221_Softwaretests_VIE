@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaschenrechnerLib.MSTest.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaschenrechnerLib.NUnit.Tests", "TaschenrechnerLib.NUnit.Tests\TaschenrechnerLib.NUnit.Tests.csproj", "{B0EE5B95-6978-4F48-8039-72B76DC13F4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaschenrechnerLib.XUnit.Tests", "TaschenrechnerLib.XUnit.Tests\TaschenrechnerLib.XUnit.Tests.csproj", "{88046BCE-53CC-4A2A-9993-1812225EDEA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B0EE5B95-6978-4F48-8039-72B76DC13F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0EE5B95-6978-4F48-8039-72B76DC13F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0EE5B95-6978-4F48-8039-72B76DC13F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88046BCE-53CC-4A2A-9993-1812225EDEA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88046BCE-53CC-4A2A-9993-1812225EDEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88046BCE-53CC-4A2A-9993-1812225EDEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88046BCE-53CC-4A2A-9993-1812225EDEA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
