@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaschenrechnerLib", "TaschenrechnerLib\TaschenrechnerLib.csproj", "{2F89FE91-AA06-4466-9BCE-6E21384C3F90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaschenrechnerLib.MSTest.Tests", "TaschenrechnerLib.MSTest.Tests\TaschenrechnerLib.MSTest.Tests.csproj", "{D048FF06-399A-4FFD-A842-5CCC83F63C5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2F89FE91-AA06-4466-9BCE-6E21384C3F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F89FE91-AA06-4466-9BCE-6E21384C3F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F89FE91-AA06-4466-9BCE-6E21384C3F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D048FF06-399A-4FFD-A842-5CCC83F63C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D048FF06-399A-4FFD-A842-5CCC83F63C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D048FF06-399A-4FFD-A842-5CCC83F63C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D048FF06-399A-4FFD-A842-5CCC83F63C5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
