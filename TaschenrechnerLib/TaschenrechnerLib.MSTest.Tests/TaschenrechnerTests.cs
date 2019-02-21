@@ -8,6 +8,7 @@ namespace TaschenrechnerLib.MSTest.Tests
     {
         // Normalfall
         [TestMethod]
+        [TestCategory("MSTest")]
         public void Taschenrechner_Add_5_and_3_results_8()
         {
             // Arrange
@@ -22,6 +23,7 @@ namespace TaschenrechnerLib.MSTest.Tests
 
         // Max
         [TestMethod]
+        [TestCategory("MSTest")]
         public void Taschenrechner_Add_Int32MaxValue_and_1_throws_OverflowException()
         {
             // Arrange
@@ -31,6 +33,7 @@ namespace TaschenrechnerLib.MSTest.Tests
         }
         // Min
         [TestMethod]
+        [TestCategory("MSTest")]
         public void Taschenrechner_Add_Int32MinValue_and_NEG1_throws_OverflowException()
         {
             // Arrange
@@ -41,6 +44,7 @@ namespace TaschenrechnerLib.MSTest.Tests
 
         // Null
         [TestMethod]
+        [TestCategory("MSTest")]
         public void Taschenrechner_Add_0_and_0_results_0()
         {
             // Arrange
@@ -53,6 +57,7 @@ namespace TaschenrechnerLib.MSTest.Tests
 
         // Mehrere Testfälle zusammenfassen
         [TestMethod]
+        [TestCategory("MSTest")]
         [DataRow(3,5,8)]
         [DataRow(0,0,0)]
         [DataRow(123,-20,103)]
