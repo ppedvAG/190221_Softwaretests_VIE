@@ -44,7 +44,6 @@ namespace TDDBank.Tests
             {
                 // Hier gilt "meine" 
                 System.Fakes.ShimDateTime.NowGet = () => new DateTime(1845, 3, 11, 12, 30, 59);
-
                 // Andere Abhängigkeiten zum Spaß :)
 
                 System.IO.Fakes.ShimFile.ExistsString = x => true;

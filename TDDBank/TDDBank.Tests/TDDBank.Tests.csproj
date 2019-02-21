@@ -56,6 +56,9 @@
       <HintPath>FakesAssemblies\System.4.0.0.0.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="TDDBank.Fakes">
+      <HintPath>FakesAssemblies\TDDBank.Fakes.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankTests.cs" />
@@ -65,6 +68,7 @@
   <ItemGroup>
     <Fakes Include="Fakes\System.fakes" />
     <Fakes Include="Fakes\mscorlib.fakes" />
+    <Fakes Include="Fakes\TDDBank.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

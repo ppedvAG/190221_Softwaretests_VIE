@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.QualityTools.Testing.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TDDBank.Tests
@@ -70,5 +71,17 @@ namespace TDDBank.Tests
         }
 
         // Zustand ist sozusagen "eincheckbar" -> Jetzt fehlt nur noch die Implementierung (LiveUnitTesting)
+
+        [TestMethod]
+        public void Bankkonto_FakeTest_Kontostand_Returns_5_000_000()
+        {
+            using (ShimsContext.Create())
+            {
+                TDDBank.Fakes.ShimBankkonto.AllInstances.KontostandGet = x => 5_000_000m;
+
+                var konto = new Bankkonto(); // müsste ja 0 sein beim erstellen
+                Assert.AreEqual(5_000_000m, konto.Kontostand); // Fake sagt: 5_000_000
+            }
+        }
     }
 }
