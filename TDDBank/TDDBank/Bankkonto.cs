@@ -8,16 +8,20 @@ namespace TDDBank
 {
     public class Bankkonto
     {
-        public int Kontostand { get; set; }
+        public decimal Kontostand { get; set; }
 
         public void Einzahlen(decimal v)
         {
-            throw new NotImplementedException();
+            if (v <= 0)
+                throw new ArgumentException();
+            this.Kontostand += v;
         }
 
         public void Abheben(decimal v)
         {
-            throw new NotImplementedException();
+            if (v <= 0 || v > this.Kontostand)
+                throw new ArgumentException();
+           this.Kontostand -= v;
         }
     }
 }
