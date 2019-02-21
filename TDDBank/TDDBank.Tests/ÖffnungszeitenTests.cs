@@ -1,5 +1,6 @@
 ﻿using Microsoft.QualityTools.Testing.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Pose;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,17 +14,17 @@ namespace TDDBank.Tests
     public class ÖffnungszeitenTests
     {
         [TestMethod]
-        [DataRow(2019,2,18,12,31,true)] //Mo - True
-        [DataRow(2019,2,20,18,00,true)] //Mi - True
-        [DataRow(2019,2,22,10,21,false)] //Fr - False
-        [DataRow(2019,2,23,12,31,true)] //Sa - True
-        [DataRow(2019,2,23,14,5,false)] //Sa - False
+        [DataRow(2019, 2, 18, 12, 31, true)] //Mo - True
+        [DataRow(2019, 2, 20, 18, 00, true)] //Mi - True
+        [DataRow(2019, 2, 22, 10, 21, false)] //Fr - False
+        [DataRow(2019, 2, 23, 12, 31, true)] //Sa - True
+        [DataRow(2019, 2, 23, 14, 5, false)] //Sa - False
         // Extremfälle
         [DataRow(2019, 2, 20, 10, 30, true)] //Mi - True
         [DataRow(2019, 2, 20, 19, 00, false)]//Mi - False
         [DataRow(2019, 2, 23, 10, 30, true)] //Sa - True
         [DataRow(2019, 2, 23, 14, 00, false)] //Sa - False
-        public void Öffnungszeiten_IsOpen(int jahr,int monat,int tag, int stunde, int minute, bool erwartetesResultat)
+        public void Öffnungszeiten_IsOpen(int jahr, int monat, int tag, int stunde, int minute, bool erwartetesResultat)
         {
             var d = new DateTime(jahr, monat, tag, stunde, minute, 0);
             var ö = new Öffnungszeiten();
@@ -59,6 +60,20 @@ namespace TDDBank.Tests
             // Netzwerkverbindung
             // Rest-API liefert immer den selben JSON/XML - String
             // => schnell und immer konsistente Daten
+        }
+
+        [TestMethod]
+        public void Öffnungszeiten_IsNowOpen_Pose()
+        {
+            Shim dateShim = Shim.Replace(() => DateTime.Now).With(() => new DateTime(1000, 1, 1));
+            DateTime datum = default;
+
+            PoseContext.Isolate(() =>
+            {
+                datum = DateTime.Now;
+            }, dateShim);
+
+            Assert.AreEqual(new DateTime(1000, 1, 1), datum);
         }
     }
 }
