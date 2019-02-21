@@ -1,6 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.QualityTools.Testing.Fakes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,10 +35,31 @@ namespace TDDBank.Tests
         [TestMethod]
         public void Öffnungszeiten_IsNowOpen()
         {
-            var ö = new Öffnungszeiten();
+            //var ö = new Öffnungszeiten();
 
-            Assert.IsTrue(ö.IsNowOpen());
-            // Problem: Unittest geht jetzt (15:23), aber am Abend oder am WE nicht mehr
+            //Assert.IsTrue(ö.IsNowOpen());
+            //// Problem: Unittest geht jetzt (15:23), aber am Abend oder am WE nicht mehr
+
+            using (ShimsContext.Create())
+            {
+                // Hier gilt "meine" 
+                System.Fakes.ShimDateTime.NowGet = () => new DateTime(1845, 3, 11, 12, 30, 59);
+
+                // Andere Abhängigkeiten zum Spaß :)
+
+                System.IO.Fakes.ShimFile.ExistsString = x => true;
+                Assert.IsTrue(File.Exists("7:\\demo\\diedateigibtesnichASOD<aosd.<asd<sad<sad&&%&"));
+
+                var ö = new Öffnungszeiten();
+                Assert.IsTrue(ö.IsNowOpen());
+            }
+
+            // Anwendungsfälle:
+            // Simulation von einem Sensor: Testcases für zu heiß, normal, kalt, keine sensordaten, Extremdaten
+            // Keine echte DB-Verbindung
+            // Netzwerkverbindung
+            // Rest-API liefert immer den selben JSON/XML - String
+            // => schnell und immer konsistente Daten
         }
     }
 }
