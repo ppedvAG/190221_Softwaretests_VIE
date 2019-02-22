@@ -1,4 +1,5 @@
 ﻿using System;
+using AutoFixture;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ppedv.Weballian.Domain;
@@ -40,7 +41,7 @@ namespace ppedv.Weballian.Data.EF.Tests
         [TestMethod]
         public void EFContext_can_create_DB()
         {
-            using (var context = new EFContext(@"Server=(localDB)\MSSQLLocalDB;Database=Weballian_CreateDBTest;Trusted_Connection=true;AttachDbFilename=C:\temp\meineDB.mdf"))
+            using (var context = new EFContext(@"Server=(localDB)\MSSQLLocalDB;Database=Weballian_CreateDBTest;Trusted_Connection=true;AttachDbFilename=C:\temp\meineDB_createTest.mdf"))
             {
                 if (context.Database.Exists())
                     context.Database.Delete();
@@ -146,6 +147,52 @@ namespace ppedv.Weballian.Data.EF.Tests
                 var loadedPerson = context.Person.Find(p.ID);
                 loadedPerson.Should().BeNull();
             }
+        }
+
+        // Autofixture -> Testdaten automatisch generieren
+        // Andere Frameworks
+        [TestMethod]
+        public void EFContext_can_CRUD_Person_Autofixture()
+        {
+            var fix = new Fixture();
+            fix.Behaviors.Add(new OmitOnRecursionBehavior());
+
+            var p = fix.Create<Person>();
+
+            // Create
+            using (var context = new EFContext(connectionString))
+            {
+                context.Person.Add(p); // Insert
+                context.SaveChanges();
+            }
+
+            using (var context = new EFContext(connectionString))
+            {
+                // Check Create
+                var loadedPerson = context.Person.Find(p.ID);
+                loadedPerson.Should().NotBeNull();
+
+                loadedPerson.Should().BeEquivalentTo(p, x =>
+                 {
+                     x.IgnoringCyclicReferences();
+                     x.Using<DateTime>(ctx => ctx.Subject.Should().BeCloseTo(ctx.Expectation))
+                      .WhenTypeIs<DateTime>();
+                     return x;
+                 });
+            }
+        }
+
+        [TestMethod]
+        public void Fixture_can_create_1000_people()
+        {
+            var fix = new Fixture();
+            fix.Behaviors.Add(new OmitOnRecursionBehavior());
+
+            var p = fix.CreateMany<Person>(1000);
+            //foreach (var item in p)
+            //{
+            //    Console.WriteLine(item.FirstName);
+            //}
         }
     }
 }
