@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Maschinen\ACME.Filmgenerator3000\ACME.Filmgenerator3000.csproj" />
+  </ItemGroup>
+
 </Project>
