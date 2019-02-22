@@ -11,15 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{AD0BC4B7-D735-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{37878D95-D380-4127-9129-CBA65B51E4AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Domain", "Domain\ppedv.Weballian.Domain\ppedv.Weballian.Domain.csproj", "{97B42BC8-3DC7-4F04-96E5-F652C33A1D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Weballian.Domain", "Domain\ppedv.Weballian.Domain\ppedv.Weballian.Domain.csproj", "{97B42BC8-3DC7-4F04-96E5-F652C33A1D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Data.EF", "Data\ppedv.Weballian.Data.EF\ppedv.Weballian.Data.EF.csproj", "{46661F28-C35C-4168-80CE-14CDD04E996D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Weballian.Data.EF", "Data\ppedv.Weballian.Data.EF\ppedv.Weballian.Data.EF.csproj", "{46661F28-C35C-4168-80CE-14CDD04E996D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Data.EF.Tests", "Data\ppedv.Weballian.Data.EF.Tests\ppedv.Weballian.Data.EF.Tests.csproj", "{CDC93C8C-4BA5-47C5-A3A7-235CB4142B7E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maschinen", "Maschinen", "{4DFA56FD-52C2-4587-8521-D7C45042F6AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACME.Filmgenerator3000", "Maschinen\ACME.Filmgenerator3000\ACME.Filmgenerator3000.csproj", "{5C3F043F-CA83-4039-A518-175614ACB178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACME.Filmgenerator3000", "Maschinen\ACME.Filmgenerator3000\ACME.Filmgenerator3000.csproj", "{5C3F043F-CA83-4039-A518-175614ACB178}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Data.Devices.Hollywood", "Data\ppedv.Weballian.Data.Devices.Hollywood\ppedv.Weballian.Data.Devices.Hollywood.csproj", "{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{5C3F043F-CA83-4039-A518-175614ACB178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C3F043F-CA83-4039-A518-175614ACB178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C3F043F-CA83-4039-A518-175614ACB178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +58,7 @@ Global
 		{46661F28-C35C-4168-80CE-14CDD04E996D} = {37878D95-D380-4127-9129-CBA65B51E4AE}
 		{CDC93C8C-4BA5-47C5-A3A7-235CB4142B7E} = {37878D95-D380-4127-9129-CBA65B51E4AE}
 		{5C3F043F-CA83-4039-A518-175614ACB178} = {4DFA56FD-52C2-4587-8521-D7C45042F6AC}
+		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F} = {37878D95-D380-4127-9129-CBA65B51E4AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B58CA2E-E331-4F4B-A0E2-6E624941463A}
