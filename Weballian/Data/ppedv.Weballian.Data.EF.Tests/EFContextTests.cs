@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ppedv.Weballian.Domain;
 
@@ -97,6 +98,53 @@ namespace ppedv.Weballian.Data.EF.Tests
                 // Check Delete
                 var loadedPerson = context.Person.Find(p.ID);
                 Assert.IsNull(loadedPerson);
+            }
+        }
+
+        [TestMethod]
+        public void EFContext_can_CRUD_Person_Fluent()
+        {
+            Person p = new Person { FirstName = "Tom", LastName = "Ate", Age = 10, Balance = 100m };
+            string newLastName = "Mustermann";
+
+            // Create
+            using (var context = new EFContext(connectionString))
+            {
+                context.Person.Add(p); // Insert
+                context.SaveChanges();
+            }
+
+            using (var context = new EFContext(connectionString))
+            {
+                // Check Create
+                var loadedPerson = context.Person.Find(p.ID);
+                loadedPerson.Should().NotBeNull();
+                // loadedPerson.FirstName.Should().Be(p.FirstName);
+
+                // Objectgraph
+                loadedPerson.Should().BeEquivalentTo(p);
+
+                // Update
+                loadedPerson.LastName = newLastName;
+                context.SaveChanges();
+            }
+
+            using (var context = new EFContext(connectionString))
+            {
+                // Check Update
+                var loadedPerson = context.Person.Find(p.ID);
+                loadedPerson.Should().NotBeNull();
+                loadedPerson.LastName.Should().Be(newLastName);
+
+                // Delete
+                context.Person.Remove(loadedPerson);
+                context.SaveChanges();
+            }
+            using (var context = new EFContext(connectionString))
+            {
+                // Check Delete
+                var loadedPerson = context.Person.Find(p.ID);
+                loadedPerson.Should().BeNull();
             }
         }
     }
