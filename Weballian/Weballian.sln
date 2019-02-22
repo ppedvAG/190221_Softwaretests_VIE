@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACME.Filmgenerator3000", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Data.Devices.Hollywood", "Data\ppedv.Weballian.Data.Devices.Hollywood\ppedv.Weballian.Data.Devices.Hollywood.csproj", "{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Data.Devices.Hollywood.Tests", "Data\ppedv.Weballian.Data.Devices.Hollywood.Tests\ppedv.Weballian.Data.Devices.Hollywood.Tests.csproj", "{5D8A97AD-1D03-447C-8CC0-231729C35D0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8A97AD-1D03-447C-8CC0-231729C35D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8A97AD-1D03-447C-8CC0-231729C35D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8A97AD-1D03-447C-8CC0-231729C35D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8A97AD-1D03-447C-8CC0-231729C35D0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{CDC93C8C-4BA5-47C5-A3A7-235CB4142B7E} = {37878D95-D380-4127-9129-CBA65B51E4AE}
 		{5C3F043F-CA83-4039-A518-175614ACB178} = {4DFA56FD-52C2-4587-8521-D7C45042F6AC}
 		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F} = {37878D95-D380-4127-9129-CBA65B51E4AE}
+		{5D8A97AD-1D03-447C-8CC0-231729C35D0A} = {37878D95-D380-4127-9129-CBA65B51E4AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B58CA2E-E331-4F4B-A0E2-6E624941463A}
