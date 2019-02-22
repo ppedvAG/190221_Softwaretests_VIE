@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AutoFixture;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -79,7 +81,50 @@ namespace TPL
             //} 
             #endregion
 
-            
+            #region Parallel
+            //Parallel.For(0, 1000,new ParallelOptions { MaxDegreeOfParallelism = 2 }, i =>
+            //  {
+            //      Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId}: {i}");
+            //  });
+
+            //string[] namen = { "Tom Ate", "Anna Nass", "Peter Silie", "Frank Ose", "Martha Pfahl", "Klara Fall", "Rainer Zufall", "Bill Dung", "Axel Schweiß", "Albert Tross" };
+
+            //Parallel.ForEach(namen, item =>
+            //{
+            //    Console.WriteLine(item);
+            //}); 
+            #endregion
+
+            // Performancetest
+            var fix = new Fixture();
+            Console.WriteLine("Create Testdata");
+            var personenEnumerable = fix.CreateMany<Person>(100_000);
+            Console.WriteLine("Testdata created");
+
+            Stopwatch watch = new Stopwatch();
+            var personen = personenEnumerable.ToList();
+
+            //var gefiltert = personen.Where(x => x.Kontostand > 1000).AsParallel();
+
+            decimal gesamtKontostand = 0;
+            watch.Start();
+            for (int i = 0; i < personen.Count; i++)
+                gesamtKontostand += personen[i].Kontostand;
+            watch.Stop();
+
+            Console.WriteLine($"For: {watch.ElapsedMilliseconds}ms {gesamtKontostand}");
+
+            gesamtKontostand = 0;
+            watch.Restart();
+            foreach (var item in personen)
+                gesamtKontostand += item.Kontostand;
+            watch.Stop();
+            Console.WriteLine($"Foreach: {watch.ElapsedMilliseconds}ms {gesamtKontostand}");
+
+            watch.Restart();
+            gesamtKontostand = personen.Sum(x => x.Kontostand);
+            watch.Stop();
+            Console.WriteLine($"LINQ: {watch.ElapsedMilliseconds}ms {gesamtKontostand}");
 
             Console.WriteLine("---ENDE---");
             Console.ReadKey();
