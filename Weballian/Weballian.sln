@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Data.Device
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Data.Devices.Hollywood.Tests", "Data\ppedv.Weballian.Data.Devices.Hollywood.Tests\ppedv.Weballian.Data.Devices.Hollywood.Tests.csproj", "{5D8A97AD-1D03-447C-8CC0-231729C35D0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Logic", "Logic\ppedv.Weballian.Logic\ppedv.Weballian.Logic.csproj", "{D5800EAD-6384-481C-9BFC-59E53707FA83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Weballian.Logic.Tests", "Logic\ppedv.Weballian.Logic.Tests\ppedv.Weballian.Logic.Tests.csproj", "{23E64F0E-AD03-45A0-8516-D1248C4ED492}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{5D8A97AD-1D03-447C-8CC0-231729C35D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D8A97AD-1D03-447C-8CC0-231729C35D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D8A97AD-1D03-447C-8CC0-231729C35D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5800EAD-6384-481C-9BFC-59E53707FA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5800EAD-6384-481C-9BFC-59E53707FA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5800EAD-6384-481C-9BFC-59E53707FA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5800EAD-6384-481C-9BFC-59E53707FA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E64F0E-AD03-45A0-8516-D1248C4ED492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E64F0E-AD03-45A0-8516-D1248C4ED492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E64F0E-AD03-45A0-8516-D1248C4ED492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E64F0E-AD03-45A0-8516-D1248C4ED492}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +78,8 @@ Global
 		{5C3F043F-CA83-4039-A518-175614ACB178} = {4DFA56FD-52C2-4587-8521-D7C45042F6AC}
 		{8A5A7D97-0D2C-4922-9CB7-A9392FEFF61F} = {37878D95-D380-4127-9129-CBA65B51E4AE}
 		{5D8A97AD-1D03-447C-8CC0-231729C35D0A} = {37878D95-D380-4127-9129-CBA65B51E4AE}
+		{D5800EAD-6384-481C-9BFC-59E53707FA83} = {66A91560-F18A-4DEE-974A-02830CC51D23}
+		{23E64F0E-AD03-45A0-8516-D1248C4ED492} = {66A91560-F18A-4DEE-974A-02830CC51D23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B58CA2E-E331-4F4B-A0E2-6E624941463A}
